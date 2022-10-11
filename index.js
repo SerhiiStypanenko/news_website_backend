@@ -13,7 +13,7 @@ import * as UserController from './controllers/UserController.js';
 import * as PostController from './controllers/PostController.js';
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
-const URI = process.env.MONGODB_URI;
+const URI = process.env.MONGODB_URI || "mongodb+srv://admin:admin122@cluster0.5lp5lkv.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
   .connect(URI, {
