@@ -15,7 +15,7 @@ import handleValidationErrors from "./utils/handleValidationErrors.js";
 const URI = process.env.MONGODB_URI;
 
 mongoose
-  .connect(URI, {
+  .connect("mongodb+srv://admin:admin122@cluster0.5lp5lkv.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
