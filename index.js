@@ -12,9 +12,15 @@ import * as UserController from './controllers/UserController.js';
 import * as PostController from './controllers/PostController.js';
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
-mongoose.connect(process.env.MONGODB_URI)
-        .then(console.log("DB Ok"))
-        .catch((err) => {console.log(err)} );
+const URI = process.env.MONGODB_URI;
+
+mongoose
+  .connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DB ok"))
+  .catch((err) => console.log("Error", err));
 
 const app = express();
 
