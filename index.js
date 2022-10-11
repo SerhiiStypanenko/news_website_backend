@@ -1,3 +1,4 @@
+import {} from 'dotenv/config'
 import express from "express";
 import multer from 'multer';
 import fs from 'fs';
@@ -15,7 +16,7 @@ import handleValidationErrors from "./utils/handleValidationErrors.js";
 const URI = process.env.MONGODB_URI;
 
 mongoose
-  .connect("mongodb+srv://admin:admin122@cluster0.5lp5lkv.mongodb.net/?retryWrites=true&w=majority", {
+  .connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
